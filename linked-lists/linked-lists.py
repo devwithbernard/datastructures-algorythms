@@ -21,3 +21,32 @@ while current_node:
     current_node = current_node.next
 
 print("Null")
+
+# Linked Lists types
+
+"""
+1- Single Linked List implementation
+"""
+class SingleNode(Node):
+    def __init__(self, data):
+        super().__init__(data)
+        self.next = None
+
+s_node1 = SingleNode(1)
+s_node2 = SingleNode(2)
+s_node3 = SingleNode(3)
+s_node4 = SingleNode(4)
+s_node5 = SingleNode(5)
+
+s_node1.next = s_node2
+s_node2.next = s_node3
+s_node3.next = s_node4
+s_node4.next = s_node5
+
+current_s_node = s_node1
+
+while current_s_node:
+    print(current_s_node.data, end=" -> ")
+    current_s_node = current_s_node.next
+
+print("Null")
