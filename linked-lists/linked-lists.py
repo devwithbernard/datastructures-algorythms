@@ -90,3 +90,19 @@ while current_d_node:
     print(current_d_node.data, end=" -> ")
     current_d_node = current_d_node.prev
 print("Null")
+
+# Circular Linked List
+d_node1.next = d_node2
+d_node2.next = d_node3
+d_node3.next = d_node4
+d_node4.next = d_node5
+d_node5.next = d_node1
+
+print("\nTraversing forward\n")
+current_d_node = d_node1
+start_d_node = d_node1
+current_d_node = current_d_node.next
+while current_d_node != start_d_node:
+    print(current_d_node.data, end=" -> ")
+    current_d_node = current_d_node.next
+print(start_d_node.data)
