@@ -50,3 +50,43 @@ while current_s_node:
     current_s_node = current_s_node.next
 
 print("Null")
+
+# Doubly Linked List Implementation
+
+class DoubleNode(Node):
+    def __init__(self, data):
+        super().__init__(data)
+        self.prev = None
+        self.next = None
+
+d_node1 = DoubleNode(1)
+d_node2 = DoubleNode(2)
+d_node3 = DoubleNode(3)
+d_node4 = DoubleNode(4)
+d_node5 = DoubleNode(5)
+
+d_node1.next = d_node2
+d_node2.next = d_node3
+d_node3.next = d_node4
+d_node4.next = d_node5
+
+d_node2.prev = d_node1
+d_node3.prev = d_node2
+d_node4.prev = d_node3
+d_node5.prev = d_node4
+
+print("\nTraversing forward\n")
+current_d_node = d_node1
+
+while current_d_node:
+    print(current_d_node.data, end=" -> ")
+    current_d_node = current_d_node.next
+print("Null")
+
+print("\nTraversing backward\n")
+current_d_node = d_node5
+
+while current_d_node:
+    print(current_d_node.data, end=" -> ")
+    current_d_node = current_d_node.prev
+print("Null")
