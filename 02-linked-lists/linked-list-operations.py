@@ -84,3 +84,27 @@ print("After deleting node3")
 head_node = delete_node(node1, node3)
 traverse_list(head_node)
 
+# Insert a Node in a Linked List
+def insert_node_at_position(head: Node, new_node: Node, position):
+    if position == 1:
+        new_node.next = head
+
+    current_node = head
+
+    for _ in range(position - 2):
+        if current_node is None:
+            break
+        current_node = current_node.next
+
+    new_node.next = current_node.next
+    current_node.next = new_node
+
+    return head
+
+
+print("Before inserting node")
+traverse_list(node1)
+
+print("After inserting node")
+head_node = insert_node_at_position(node1, Node(16), 3)
+traverse_list(head_node)
