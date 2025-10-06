@@ -57,3 +57,30 @@ traverse_list(node1)
 
 print("Lowest value:", find_lowest_value(node1))
 print("Largest value:", find_largest_value(node1))
+
+# Delete a Node in a Linked List
+
+def delete_node(head: Node, node_to_delete: Node) -> Node:
+    if head == node_to_delete:
+        return head.next
+
+    current_node = head
+    while current_node.next and current_node.next != node_to_delete:
+        current_node = current_node.next
+
+    if current_node.next is None:
+        return head
+
+    current_node.next = current_node.next.next
+
+    return head
+
+
+# Delete node3
+print("Before deleting node3")
+traverse_list(node1)
+
+print("After deleting node3")
+head_node = delete_node(node1, node3)
+traverse_list(head_node)
+
